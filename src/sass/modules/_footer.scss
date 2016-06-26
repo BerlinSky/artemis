@@ -1,4 +1,20 @@
-footer {
- 
+.footer {
+	text-align: center;
+
+	.icons {
+		// color: _palette(fg-light);
+		color: #aaaaaa;
+	}
+
+	.copyright {
+		// color: _palette(fg-light);
+		color: #aaaaaa;
+		font-family: _font(family-heading);
+		font-size: 0.5em;
+		font-weight: _font(weight-heading);
+		letter-spacing: _font(kerning-heading);
+		text-transform: uppercase;
+	}
 }
+
 
