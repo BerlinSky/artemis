@@ -1,13 +1,18 @@
-.siteContainer {
+.l-siteContainer {
 	display: flex;
 	flex-direction: column;
-
-	// @include respondTo(large) {
-	// 	display: block;
-	// }
 }
 
-.mainContent {
+.l-navigation {
+  display: flex;
+  justify-content: space-between;
+
+  .l-navlinks {
+    flex: 1;
+  }
+}
+
+.l-mainContent {
 		flex-grow: 1;
 		width: 100%;
 }
