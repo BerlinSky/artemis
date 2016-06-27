@@ -1,22 +1,22 @@
 /// Gets a duration value.
-/// @param {string} $keys Key(s).
+/// @param {string} $key.
 /// @return {string} Value.
-@function _duration($keys...) {
-	@return val($duration, $keys...);
+@function _duration($key) {
+	@return map-get($duration, $key);
 }
 
 /// Gets a font value.
-/// @param {string} $keys Key(s).
+/// @param {string} $key.
 /// @return {string} Value.
-@function _font($keys...) {
-	@return val($font, $keys...);
+@function _font($key) {
+	@return map-get($font, $key);
 }
 
 /// Gets a misc value.
-/// @param {string} $keys Key(s).
+/// @param {string} $key.
 /// @return {string} Value.
-@function _misc($keys...) {
-	@return val($misc, $keys...);
+@function _misc($key) {
+	@return map-get($misc, $key);
 }
 
 /// Gets a palette value.
@@ -27,8 +27,8 @@
 }
 
 /// Gets a size value.
-/// @param {string} $keys Key(s).
+/// @param {string} $key.
 /// @return {string} Value.
-@function _size($keys...) {
-	@return val($size, $keys...);
+@function _size($key) {
+	@return map-get($size, $key);
 }

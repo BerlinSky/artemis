@@ -1,4 +1,18 @@
 .siteContainer {
-	
+	display: flex;
+	flex-direction: column;
+
+	// @include respondTo(large) {
+	// 	display: block;
+	// }
+}
+
+.mainContent {
+		flex-grow: 1;
+		width: 100%;
+}
+
+.mainNav {
+
 }
 
