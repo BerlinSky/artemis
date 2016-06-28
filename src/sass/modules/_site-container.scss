@@ -4,8 +4,8 @@
 	width: 100%;
 	transition: 'opacity #{_duration(menu)} ease';
 	opacity: 1;
-
 	padding: 0;
+	background-color: #333;
 
 	@include respondTo(xlarge) {
 		padding: _size(section-spacing);
@@ -17,5 +17,18 @@
 
 	.is-menu-visible {
 		opacity: 0.15;
+	}
+
+	@include respondTo(xsmall) {
+		border: 10px solid #333;
+		border-radius: 15px;
+		padding: 5px;
+	}
+
+	@include respondTo(small) {
+		border: 10px solid #333;
+		border-radius: 15px;
+		padding-left: 5px;
+		padding-right: 5px;
 	}
 }

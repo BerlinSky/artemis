@@ -1,5 +1,6 @@
 .navigation {
-  background-color: _palette(bg);
+  // background-color: _palette(bg);
+  background-color: black;
   border-bottom: solid 1px _palette(border);
 
   height: 3.5em;
@@ -26,7 +27,8 @@
   }
 
   a {
-    color: inherit;
+    // color: inherit;
+    color: _palette(fg-light);
     text-decoration: none;
   }
 }
