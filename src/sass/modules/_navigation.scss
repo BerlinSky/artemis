@@ -3,12 +3,14 @@
   border-bottom: solid 1px _palette(border);
 
   height: 3.5em;
-  left: 0;
   line-height: 3.5em;
-  position: fixed;
-  top: 0;
   width: 100%;
-  z-index: _misc(z-index-base);
+  // z-index: _misc(z-index-base);
+
+  @include respondTo(xsmall) {
+    height: 3.25em;
+    line-height: 3.25em;
+  }
 
   @include respondTo(small) {
     height: 2.75em;

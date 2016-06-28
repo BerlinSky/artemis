@@ -5,10 +5,8 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 480px) {
-  html, body {
+html, body {
     min-width: 320px;
-  }
 }
 
 body {
@@ -16,8 +14,8 @@ body {
 }
 
 body.is-loading *, body.is-loading *:before, body.is-loading *:after {
-    animation: none;
-    transition: none;
+  animation: none;
+  transition: none;
 }
 
 body, input, select, textarea {
@@ -29,37 +27,19 @@ body, input, select, textarea {
 }
 
 body {
-  padding-top: 3.5em;
-}
+  padding: 0;
 
-@media screen and (max-width: 1680px) {
-  body, input, select, textarea {
-    font-size: 12pt;
+  @include respondTo(medium) {
+    padding-top: 3.5em;
+  } 
+  @include respondTo(large) {
+    padding-top: 3.5em;
+  } 
+  @include respondTo(xlarge) {
+    padding-top: 3.5em;
   }
-}
 
-@media screen and (max-width: 1280px) {
-  body, input, select, textarea {
-    font-size: 12pt;
-  }
-}
-
-@media screen and (max-width: 980px) {
-  body, input, select, textarea {
-    font-size: 12pt;
-  }
-}
-
-@media screen and (max-width: 736px) {
-  body, input, select, textarea {
-    font-size: 12pt;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  body, input, select, textarea {
-    font-size: 12pt;
-  }
+  // background-color: yellow;
 }
 
 a {

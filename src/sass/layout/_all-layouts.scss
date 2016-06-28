@@ -3,6 +3,10 @@
 	flex-direction: column;
 }
 
+.siteContainer> * {
+  flex:1 1 auto;
+}
+
 .l-navigation {
   display: flex;
   justify-content: space-between;
@@ -13,8 +17,8 @@
 }
 
 .l-mainContent {
-		flex-grow: 1;
-		width: 100%;
+		// overflow-y:scroll;
+  // -webkit-overflow-scrolling:touch;
 }
 
 .mainNav {
