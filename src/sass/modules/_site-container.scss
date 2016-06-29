@@ -21,15 +21,17 @@
 	}
 
 	@include respondTo(xsmall) {
-		border: 10px solid #333;
-		border-radius: 15px;
 		padding: 5px;
 	}
 
 	@include respondTo(small) {
-		border: 10px solid #333;
-		border-radius: 15px;
-		padding-left: 5px;
-		padding-right: 5px;
+	}
+
+	.siteAttraction {
+		position: relative;
+		height: 400px;
+		width: 100%;
+		overflow:	hidden;
+		margin-bottom: 25px;
 	}
 }
