@@ -9823,7 +9823,18 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _jquery2.default)(function () {});
+(0, _jquery2.default)(function () {
+
+	var siteContainer = (0, _jquery2.default)('.siteContainer');
+
+	(0, _jquery2.default)('.js-fixed-header').click(function () {
+		siteContainer.toggleClass('l-header-fixed');
+	});
+
+	(0, _jquery2.default)('.js-fixed-footer').click(function () {
+		siteContainer.toggleClass('l-footer-fixed');
+	});
+});
 
 },{"jquery":1}]},{},[2])
 //# sourceMappingURL=bundle.js.map
