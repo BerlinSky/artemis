@@ -8,7 +8,7 @@
 	padding: 0;
 	background-color: #333;
 
-	@include respondTo(xlarge) {
+	@include respondTo(x-large) {
 		padding: _size(section-spacing);
 	}
 
@@ -20,7 +20,7 @@
 		opacity: 0.15;
 	}
 
-	@include respondTo(xsmall) {
+	@include respondTo(x-small) {
 		padding: 5px;
 	}
 

@@ -32,9 +32,12 @@
 			color: #ec5a62;
 			transition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);
 
-			&::-ms-clear { /* remove cross in IE */
-			    display: none;
-			}
+			&::-ms-clear {  display: none; width : 0; height: 0; }
+			&::-ms-reveal {  display: none; width : 0; height: 0; }
+			&::-webkit-search-decoration,
+			&::-webkit-search-cancel-button,
+			&::-webkit-search-results-button,
+			&::-webkit-search-results-decoration { display: none; }
 
 			&::-webkit-input-placeholder {
 				color: #c2c2c2;
@@ -52,17 +55,12 @@
 				color: #c2c2c2;
 			}
 
-			/* TODO; hide placeholder when active in Chrome */
-			// .gn-search:focus::-webkit-input-placeholder {
-			// 	color: transparent;
-			// }
-
 			&:focus::-webkit-input-placeholder {
 				color: transparent;
 			}
 
 			&:focus,
-			.morphsearch-submit:focus {
+			.searchForm__submit:focus {
 				outline: none;
 			}
 		}
@@ -166,10 +164,37 @@ input[type="search"] {
 	box-sizing: border-box;	
 }
 
-// TODO: Rename to js-hideInput
-.searchContainer.hideInput .searchForm__input {
-	color: transparent;
-	transition: color 0.3s;
+
+
+.searchContainer.open .searchForm__input {
+	@include respondTo(medium) {
+		padding: 0 25% 0 10px;
+		font-size: 5em;
+	}
+
+	@include respondTo(small) {
+		padding: 0 25% 0 10px;
+		font-size: 3em;
+	}
+
+	@include respondTo(x-small) {
+		padding: 0 25% 0 10px;
+		font-size: 2em;
+	}
+}
+
+.searchContainer.open .searchForm__submit {  
+	@include respondTo(x-small) {
+		transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);
+	}
+
+	@include respondTo(small) {
+		transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);
+	}
+
+	@include respondTo(medium) {
+		transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);
+	}
 }
 
 
