@@ -37,7 +37,7 @@
       <nav class="navActions">
         <ul>
           <li class="navActions__item navActions__item__search visble">
-            <a class="js-searchButton fa-search" href="#search">Search</a>
+            <a class="js-buttonSearchOpen fa-search" href="#search">Search</a>
            <!--  <form id="search" class="searchForm" method="get" action="#">
               <input type="text" name="query" placeholder="Search" />
             </form> -->
@@ -62,15 +62,15 @@
       </div>
     </section>
 
-    <section id="morphsearch" class="searchContainer js-searchContainer">
+    <section class="searchContainer js-searchContainer">
       <form class="searchForm x-morphsearch-form">
         <input class="searchForm__input x-morphsearch-input" type="search" placeholder="Search..."/>
-        <button class="searchForm__submit x-morphsearch-submit" type="submit">Search</button>
+        <button class="searchForm__submit js-buttonSearchSubmit x-morphsearch-submit" type="submit">Search</button>
       </form>
       <div class="searchContent">
 
       </div>
-      <span class="searchClose x-morphsearch-close"></span>
+      <span class="searchClose js-buttonSearchClose x-morphsearch-close"></span>
     </section>
 
     <footer class="l-footer footer">
