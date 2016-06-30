@@ -9889,6 +9889,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 	// Search component:
 	var searchContainer = (0, _jquery2.default)('.js-searchContainer');
+	// const searchButton = $('.js-searchButton');
+
+	(0, _jquery2.default)('.js-searchButton').click(function () {
+		console.log('searchButton called');
+
+		searchContainer.addClass('open');
+	});
 
 	var morphSearch = document.getElementById('morphsearch'),
 	    input = morphSearch.querySelector('input.morphsearch-input'),

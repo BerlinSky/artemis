@@ -18,6 +18,14 @@ $(function () {
 
 // Search component:
 const searchContainer = $('.js-searchContainer');
+// const searchButton = $('.js-searchButton');
+
+$('.js-searchButton').click(function() {
+	console.log('searchButton called');
+	
+	searchContainer.addClass('open');
+});
+
 
 var morphSearch = document.getElementById( 'morphsearch' ),
 	input = morphSearch.querySelector( 'input.morphsearch-input' ),
