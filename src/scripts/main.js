@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import ajaxmini from './ajax/ajaxmini';
 
 $(function () {
 
@@ -11,5 +12,8 @@ $(function () {
 	$('.js-fixed-footer').click(function() {
 		siteContainer.toggleClass('l-footer-fixed');
 	});
+
+	const ajax = new ajaxmini();
+	ajax.jsonPost();
 
 });
