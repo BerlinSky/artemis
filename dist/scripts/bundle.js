@@ -9815,6 +9815,63 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var AccountManager = function () {
+	function AccountManager() {
+		_classCallCheck(this, AccountManager);
+	}
+
+	_createClass(AccountManager, [{
+		key: '_hasAccounts',
+
+
+		// Use rest parameter
+		value: function _hasAccounts() {
+			for (var _len = arguments.length, accountNumbers = Array(_len), _key = 0; _key < _len; _key++) {
+				accountNumbers[_key] = arguments[_key];
+			}
+
+			for (var i in accountNumbers) {
+				var accountNumber = accountNumbers[i];
+				console.info('accountNumber', accountNumber);
+			}
+		}
+
+		// Use spread operator
+
+	}, {
+		key: 'searchAccountNumbers',
+		value: function searchAccountNumbers() {
+			var accountNumbers = ['1234567', '5434233', '8855441'];
+			this._hasAccounts.apply(this, accountNumbers);
+		}
+
+		// Object initializer
+
+	}, {
+		key: 'createDigest',
+		value: function createDigest(accountNumber, accountTitle) {
+			var digest = 'The unique identifier for the record is its account number, ' + accountNumber + ".  The title assigned to this account is  " + accountTitle;
+
+			return { accountNumber: accountNumber, accountTitle: accountTitle, digest: digest };
+		}
+	}]);
+
+	return AccountManager;
+}();
+
+exports.default = AccountManager;
+
+},{}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9859,7 +9916,7 @@ var ajaxmini = function () {
 
 exports.default = ajaxmini;
 
-},{"jquery":1}],3:[function(require,module,exports){
+},{"jquery":1}],4:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -9869,6 +9926,10 @@ var _jquery2 = _interopRequireDefault(_jquery);
 var _ajaxmini = require('./ajax/ajaxmini');
 
 var _ajaxmini2 = _interopRequireDefault(_ajaxmini);
+
+var _accountManager = require('./account/account-manager');
+
+var _accountManager2 = _interopRequireDefault(_accountManager);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9883,9 +9944,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	(0, _jquery2.default)('.js-fixed-footer').click(function () {
 		siteContainer.toggleClass('l-footer-fixed');
 	});
-
-	var ajax = new _ajaxmini2.default();
-	ajax.jsonPost();
 
 	// Search component:
 	var searchContainer = (0, _jquery2.default)('.js-searchContainer');
@@ -9902,7 +9960,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		// TODO: add actual
 		evt.preventDefault();
 	});
+
+	var ajax = new _ajaxmini2.default();
+	ajax.jsonPost();
+
+	(0, _jquery2.default)('.js-actionMenu').click(function (evt) {
+		var accountManager = new _accountManager2.default();
+
+		accountManager.searchAccountNumbers();
+
+		// searchBooks('War and Peace', 'The Poisonwood Bible', 'A Girl from Krakow');
+		// searchBookTitles();
+
+		// // Object destructing
+		// let { first, last, fullName } = builderUser("Alex", "Preston");
+		// console.log( first );
+		// console.log( last );
+		// console.log( fullName );
+	});
 });
 
-},{"./ajax/ajaxmini":2,"jquery":1}]},{},[3])
+},{"./account/account-manager":2,"./ajax/ajaxmini":3,"jquery":1}]},{},[4])
 //# sourceMappingURL=bundle.js.map
