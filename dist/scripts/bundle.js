@@ -9842,6 +9842,7 @@ var AccountManager = function () {
 
 			for (var i in accountNumbers) {
 				var accountNumber = accountNumbers[i];
+
 				console.info('accountNumber', accountNumber);
 			}
 		}
@@ -9852,6 +9853,7 @@ var AccountManager = function () {
 		key: 'searchAccountNumbers',
 		value: function searchAccountNumbers() {
 			var accountNumbers = ['1234567', '5434233', '8855441'];
+
 			this._hasAccounts.apply(this, accountNumbers);
 		}
 
@@ -9860,9 +9862,37 @@ var AccountManager = function () {
 	}, {
 		key: 'createDigest',
 		value: function createDigest(accountNumber, accountTitle) {
-			var digest = 'The unique identifier for the record is its account number, ' + accountNumber + ".  The title assigned to this account is  " + accountTitle;
 
-			return { accountNumber: accountNumber, accountTitle: accountTitle, digest: digest };
+			// Template strings:
+			var digest = 'The unique identifier for the record is its account number, ' + accountNumber + ' , \nThe title assigned to this account is ' + accountTitle + '.';
+
+			var accountInfo = { accountNumber: accountNumber, accountTitle: accountTitle, digest: digest };
+
+			console.info('accountInfo', accountInfo);
+
+			// destruct the selected item(s):
+			var digestOnly = { digest: digest };
+			console.info('digest', digest);
+		}
+
+		// Object.assign:
+		// countDownTimer("thisElement", 60, { container: '.new-post-options' });
+
+	}, {
+		key: 'countDownTimer',
+		value: function countDownTimer(target, timeLeft) {
+			var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+
+			var defaults = {
+				container: ".timer-display",
+				timeLeft: "second",
+				maxLength: "24 hrs"
+			};
+
+			var settings = Object.assign({}, defaults, options);
+
+			console.log(settings.container);
+			console.log(settings.timeUni);
 		}
 	}]);
 
@@ -9969,14 +9999,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 		accountManager.searchAccountNumbers();
 
-		// searchBooks('War and Peace', 'The Poisonwood Bible', 'A Girl from Krakow');
-		// searchBookTitles();
-
-		// // Object destructing
-		// let { first, last, fullName } = builderUser("Alex", "Preston");
-		// console.log( first );
-		// console.log( last );
-		// console.log( fullName );
+		accountManager.createDigest('1234567', "Savings Account for Retirement");
 	});
 });
 

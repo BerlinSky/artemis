@@ -38,14 +38,8 @@ $(function () {
 
 		accountManager.searchAccountNumbers();
 		
-		// searchBooks('War and Peace', 'The Poisonwood Bible', 'A Girl from Krakow');
-		// searchBookTitles();
-
-		// // Object destructing
-		// let { first, last, fullName } = builderUser("Alex", "Preston");
-		// console.log( first );
-		// console.log( last );
-		// console.log( fullName );
+		accountManager.createDigest('1234567', "Savings Account for Retirement");
+		
 	});
 
 });
